@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>APF</title>
+        <meta name="viewport" content="width=device-width; initial scale=1.0;">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            .divinfo{
+                display: inline;
+                top: 10px;
+                left:100px;
+                visibility: hidden;
+                overflow: hidden;
+                z-index: 1000;
+            }
+            .animm{
+                position:relative;
+                top:0px;
+                left:70px;
+                animation-name: frontanim;
+                animation-duration: 2s;
+                animation-iteration-count: 1;
+            }
+
+            #imag{
+                display: none;
+            }
+
+            @media only screen and (min-width: 800px){
+                #imag{
+                    display: inline;
+                    align-content: center;
+                    border: 4px solid black;
+                    background-color: white;
+                }
+
+            }
+                
+            
+
+            @keyframes frontanim{
+                0%{                
+                    top:0px;
+                    left:1200px;
+                }
+                100%{
+                    top:0px;
+                    left:70px;
+                }
+            }
+        </style>
+    </head>
+    <body onload="dissp(1)">
+        <div class="container">
+            <div class="sidelin"></div>
+            <div class="siderin"></div>
+            <div>
+                <img src="img/logo.png" class="logo"> 
+            </div>            
+            <div class="menu">
+                <a href="inicio.html" class="menul">Inicio</a>
+                <a href="products/productos.html" class="menul">Productos</a>
+                <a href="ergonomia.html" class="menul">Ergonomía</a>
+                <a href="servicio.html" class="menul">Servicio</a>
+                <a href="certificaciones.html" class="menul">Certificaciones</a>
+                <a href="garantia.html" class="menul">Garantía</a>
+                <a href="contacto.html" class="menul">Contacto</a>
+            </div>            
+            <div class="anim" style="min-height:250px; overflow: hidden;">
+                <img id="divisan" class="animm"> 
+                
+                <button type="button" class="boton" onclick="dissp(5)">5</button>
+                <button type="button" class="boton" onclick="dissp(4)">4</button>
+                <button type="button" class="boton" onclick="dissp(3)">3</button>
+                <button type="button" class="boton" onclick="dissp(2)">2</button>
+                <button type="button" class="boton" onclick="dissp(1)">1</button>               
+            </div>
+            <div class="anim" style="min-height:50px;"></div>
+            <div class="info2">
+                <h1>Bienvenidos a APF</h1>
+                <div>APF es una compañía 100% mexicana que cubre las necesidades de elevación de materiales de la industria manufacturera en general. 
+                    Utilizando sistemas hidráulicos o neumáticos, los elevadores de APF contribuyen a aumentar la productividad al permitir mover cargas
+                    con mayor agilidad ya sea en la línea de producción o en la carga y descarga de materiales.</div>
+                <div>Los elevadores APF nos permiten levantar cargas muy pesadas permitiendo mejorar tiempos de producción, evitar lesiones en el 
+                    personal y optimizar los espacios. Nos permite fabricar o dar mantenimiento a piezas pesadas que tenemos que tener a diferentes 
+                    alturas para trabajar con ellas de manera adecuada. Son de gran utilidad en áreas de carga y descarga de material evitando lesiones
+                        en el personal y material dañado por una mala maniobra.</div>
+                <div>Le invitamos a visitar nuestro sitio y conocer las posibilidades en eficiencia que ofrecen nuestros productos para su línea de producción.</div>                                 
+            </div>
+            <div id="imag" onmousemove="animelev()">
+                <img id="imagg" src="img/inic/images/img_0_0_0.jpg" style="width: 400px; height:auto;">
+            </div>
+            <div class="foote">
+                Derechos Reservados 2019
+
+                <a href="termycon.html" style="float:right;text-indent: 0.5em; text-decoration: none; color:black;" target="_blank">Términos y condiciones</a>
+                <a href="priv.html" style="float: right; text-indent: 0.5em; text-decoration: none; color:black;" target="_blank">Aviso de privacidad</a>
+                <span style="float:right;">última actualización 2019</span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var imgsho=document.getElementById("imagg");
+            var xp=document.getElementById("imag").offsetLeft;
+            var xw=document.getElementById("imag").offsetWidth;
+            var yp=document.getElementById("imag").offsetTop;
+            var yh=document.getElementById("imag").offsetHeight;
+            var baseim=document.getElementById("divisan");
+
+            var imags=new Array();   
+            var basim=new Array();         
+            var i=0;
+            var j=0;
+            var y=0;
+            var x=0;
+            var pos=0;
+            var poss="";
+
+            
+                        
+            for(i=0;i<5;i++)
+            {
+                basim[i]=new Image();
+            }
+            
+            basim[0].src="img/inic/ts.jpg";
+            basim[1].src="img/inic/td.jpg";
+            basim[2].src="img/inic/tn.jpg";
+            basim[3].src="img/inic/tsi.jpg";
+            basim[4].src="img/inic/tdi.jpg";
+            for (i=0;i<6;i++){
+                for(j=0;j<16;j++){
+                    pos=(i/1)*16+j/1;
+                    imags[pos]=new Image();
+                    poss="img/inic/images/img_0_"+i.toString()+"_"+j.toString()+".jpg"; 
+                    imags[pos].src=poss;                                     
+                }
+            }
+                        
+            function animelev()
+            {
+                
+                x=event.clientX;
+                x=Math.abs((((x/1-xp/1)/(xw/1))*15-15).toFixed(0));
+                y=event.clientY;
+                y=Math.abs(((((y/1-yp/1)/(yh)/1)*5-5)).toFixed(0));
+                pos=parseInt((y/1)*16+x/1);
+                poss="img/inic/images/img_0_"+y.toString()+"_"+x.toString()+".jpg";
+                imgsho.src=poss;                
+            }
+            function dissp(decss){     
+                
+
+                baseim.classList.remove("animm");
+                void baseim.offsetWidth;
+                baseim.classList.add("animm");
+                baseim.style="width:auto; height:250px;"
+
+                if(decss==5){baseim.src="img/inic/tdi.jpg";}
+                else if(decss==4){baseim.src="img/inic/tsi.jpg";}
+                else if(decss==3){baseim.src="img/inic/tn.jpg";}
+                else if(decss==2){baseim.src="img/inic/td.jpg";}
+                else if(decss==1){baseim.src="img/inic/ts.jpg";}
+            }
+        </script>
+    </body>
+</html>
