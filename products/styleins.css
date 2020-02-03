@@ -1,0 +1,237 @@
+body{
+    background-image: url("../img/bckg.jpg");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{ /*Diseño para celulares*/
+    display: grid;
+    grid-gap: 4px;
+    min-width: 390px;
+}
+.contpiez{
+    display: grid;
+    grid-gap: 4px;
+}
+.sidel{
+    display: none;
+}
+.sider{
+    display: none;
+}
+.unid{ /*fraction block in container*/
+    text-align: center;
+}
+.unidt{ /*fraction block in container*/
+    display: none;
+}
+.unidl{ /*fraction block in container*/    
+    display: inline;
+    text-align: center;
+}
+.logo{
+    text-align: center;
+}
+.menu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);    
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.menul{
+    text-decoration: none; 
+    color:black;
+    align-items: center;
+    align-content: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: white;
+}
+.menul:hover{
+    background-color: aqua;
+}
+.info{
+    text-align: justify;
+}
+.foote{
+    border-top: 4px solid black;
+}
+.imag{
+    display: none;
+}
+a:hover{
+    font-size:24px;
+}
+@media only screen and (min-width: 1490px) /*Diseño para computadoras*/
+{
+    body{
+        background-image: url("img/bckg.jpg");
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{ /*Contenedor general*/
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 4px;
+    }
+    .contpiez{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4px;
+    }
+    .sidel{
+        display: grid;
+        grid-column: 1/3;
+        grid-row: 1/4;
+    }
+    .sider{
+        display: grid;
+        grid-column: 7/9;
+        grid-row: 1/4;
+    }
+    .unid{
+        text-align: center;
+        border: none;
+    }
+    .unidt{ /*fraction block in container*/
+        text-align: center;
+        display: inline;        
+    }
+    .unidl{ /*fraction block in container*/
+        display: none;
+    }
+    .logo{
+        text-align: left;
+        max-width:137px; 
+        max-height:auto;
+    }
+    .menu{
+        display:inline;
+        grid-column: 4/7;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .menul{
+        border:none;
+        text-decoration: none; 
+        color:black;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 0;
+    }
+    .menul:hover{
+        background-color: aqua;
+    }
+    a:hover{
+        font-size:24px;
+    }
+    .info{
+        grid-column: 3/7;
+        text-align: justify;
+        padding: 2px;
+    }
+    .leff{
+        grid-column:1/3;
+    }
+    .rigg{
+        grid-column: 2/4;
+    }
+    .foote{
+        grid-column: 3/7;
+        border-top: 4px solid black;
+    }
+    .imag{
+        display: grid;
+        align-content:center;
+    }    
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1490px)/*Diseño para tablets*/
+{
+    body{
+        background-image: url("img/bckg.jpg");
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4px;
+    }
+    .contpiez{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4px;
+    }
+    .leff{
+        grid-column:1/3;
+    }
+    .rigg{
+        grid-column: 2/4;
+    }
+    .sidel{
+        display: none;
+    }
+    .sider{
+        display: none;
+    }
+    .unid{
+        text-align: center;
+    }
+    .unidt{ /*fraction block in container*/
+        text-align: right;
+        display: inline;
+    }
+    .unidl{ /*fraction block in container*/        
+        display: none;
+    }
+    .logo{
+        grid-column: 1/4;
+        text-align: left;
+        max-width:137px; 
+        max-height:auto;
+    }
+    .menu{
+        display:inline;
+        grid-column: 1/4;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .menul{
+        border:none;
+        text-decoration: none; 
+        color:black;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 7px;       
+    }
+    .menul:hover{
+        background-color: aqua;
+    }    
+    a:hover{
+        font-size:24px;
+    }
+    .info{
+        grid-column: 1/4;
+        text-align: justify;
+        padding: 2px;
+    }
+    .foote{
+        grid-column: 1/4;
+        border-top: 4px solid black;
+    }
+    .imag{
+        align-content:center;
+    }
+}
+
